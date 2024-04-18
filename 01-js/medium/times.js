@@ -9,5 +9,14 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    const beforeTime = new Date().getSeconds();
+    let sum = 0;
+    for(let x = 0; x < n; x++) {
+        sum += x;
+    }
+    const afterTime = new Date().getSeconds();  
+    console.log(sum);
+    console.log("It took:", afterTime - beforeTime, "Seconds");
 }
+
+calculateTime(6000000000);
