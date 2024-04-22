@@ -4,7 +4,21 @@
  * the function should return a promise just like before
  */
 
+function myAsync(n) {
+    return new Promise((resolve) => {
+        setTimeout(function () {
+            resolve();
+        }, n);
+    });
+}
+
+async function callback(n) {
+    const check = await myAsync(n);
+    return check;
+}
+
 function sleep(milliseconds) {
+    return callback((milliseconds));
 }
 
 module.exports = sleep;
