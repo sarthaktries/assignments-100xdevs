@@ -9,5 +9,22 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    let beforeTime = new Date();
+    calculation(n);
+    let afterTime = new Date();
+
+    let diffTime = afterTime - beforeTime;
+    return diffTime / 1000;
+}
+
+function calculation(n) {
+    let sum = 0;
+    for (let x = 1; x <= n; x++) {
+        sum = sum + x;
+    }
+}
+
+let tests = [100000, 10000000, 1000000000, 10000000000];
+for (let cases of tests) {
+    console.log(calculateTime(cases) + " Sec");
 }
